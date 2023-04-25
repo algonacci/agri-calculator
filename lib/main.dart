@@ -1,4 +1,6 @@
+import 'package:agri_calculator/fertilizer_calculator_page.dart';
 import 'package:agri_calculator/home_page.dart';
+import 'package:agri_calculator/soil_fertility_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +12,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
+      home: const HomePage(),
+      routes: {
+        '/fertilizer_calculator': (context) => const FertilizerCalculatorPage(),
+        '/soil_fertility_prediction': (context) =>
+            const SoilFertilityPredictionPage()
+      },
     );
   }
 }
